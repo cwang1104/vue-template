@@ -17,17 +17,23 @@ import allGlabal from '@/components'
 //注册全局样式
 import '@/styles/index.scss'
 
+//注册模板路由
+import router from './router'
+
+
+
 const app = createApp(App)
 
 app.use(ElementPlus, {
   locale: zhCn,
 })
 app.use(allGlabal)
+app.use(router)
 
 app.mount('#app')
 
-import { reqLogin } from './api/user'
-reqLogin({
-  username: 'admin',
-  password: '1234565',
-})
+// import { reqLogin } from './api/user'
+// reqLogin({
+//   username: 'admin',
+//   password: '1234565',
+// })
