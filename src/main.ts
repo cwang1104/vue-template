@@ -25,3 +25,9 @@ app.use(ElementPlus, {
 app.use(allGlabal)
 
 app.mount('#app')
+
+import { reqLogin } from './api/user'
+reqLogin({
+  username:'admin',
+  password:'1234565'
+})
