@@ -8,7 +8,6 @@ import 'element-plus/dist/index.css'
 //@ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
-
 //svg插件配置代码
 import 'virtual:svg-icons-register'
 
