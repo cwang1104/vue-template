@@ -21,7 +21,7 @@ console.log('环境变量')
 console.log(import.meta.env)
 console.log(import.meta.env.VITE_APP_TITLE)
 </script>
-<style scoped lang="scss"> 
+<style scoped lang="scss">
 .jck {
   background-color: aquamarine;
 }

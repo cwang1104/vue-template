@@ -1,6 +1,6 @@
 //常量路由
-import { RouteRecordRaw } from 'vue-router';
-export const constantRoute=<Array<RouteRecordRaw>> [
+import { RouteRecordRaw } from 'vue-router'
+export const constantRoute = <Array<RouteRecordRaw>>[
   {
     //登录
     path: '/login',

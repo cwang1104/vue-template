@@ -20,8 +20,6 @@ import '@/styles/index.scss'
 //注册模板路由
 import router from './router'
 
-
-
 const app = createApp(App)
 
 app.use(ElementPlus, {
