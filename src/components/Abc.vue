@@ -1,9 +1,5 @@
-<template>
-    abc test
-</template>
+<template>abc test</template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
-<style>
-</style>
+<style></style>

@@ -5,12 +5,12 @@ import { fileURLToPath, URL } from 'node:url'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  resolve:{
+  resolve: {
     // alias:{
     //   "@": path.resolve("./src")  //相对路径使用@替代src
     // }
-    alias:{
-      '@':fileURLToPath(new URL('./src',import.meta.url))
-    }
-  }
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
 })
