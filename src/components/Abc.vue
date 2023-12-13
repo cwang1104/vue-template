@@ -2,12 +2,10 @@
   abc test
 
   <div>
-    <Svgicon name="pg" width="50px" height="50px"></Svgicon>
+    <SvgIcon name="pg" width="100px" height="100px"></SvgIcon>
   </div>
 </template>
 
-<script setup lang="ts">
-import Svgicon from '@/components/Svgicon.vue'
-</script>
+<script setup lang="ts"></script>
 
 <style></style>
