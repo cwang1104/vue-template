@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { Check } from '@element-plus/icons-vue'
 import Abc from '@/components/Abc.vue'
-console.log("环境变量");
+console.log('环境变量')
 
 console.log(import.meta.env)
 console.log(import.meta.env.VITE_APP_TITLE)

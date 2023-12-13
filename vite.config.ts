@@ -1,11 +1,9 @@
-
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { fileURLToPath, URL } from 'node:url'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { viteMockServe } from 'vite-plugin-mock'
 import { UserConfigExport, ConfigEnv } from 'vite'
-
 
 // https://vitejs.dev/config/
 

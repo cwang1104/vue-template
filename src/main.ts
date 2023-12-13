@@ -28,6 +28,6 @@ app.mount('#app')
 
 import { reqLogin } from './api/user'
 reqLogin({
-  username:'admin',
-  password:'1234565'
+  username: 'admin',
+  password: '1234565',
 })
