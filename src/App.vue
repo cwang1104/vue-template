@@ -9,6 +9,9 @@
 <script setup lang="ts">
 import { Check } from '@element-plus/icons-vue'
 import Abc from '@/components/Abc.vue'
+
+console.log(import.meta.env)
+
 </script>
 <style scoped lang="scss">
 .jck {
