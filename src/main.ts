@@ -10,16 +10,18 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
 //svg插件配置代码
 import 'virtual:svg-icons-register'
-//注册全局组件
 
+//注册全局组件
 import allGlabal from '@/components'
+
+//注册全局样式
+import '@/styles/index.scss'
 
 const app = createApp(App)
 
 app.use(ElementPlus, {
   locale: zhCn,
 })
-
 app.use(allGlabal)
 
 app.mount('#app')

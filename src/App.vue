@@ -16,4 +16,14 @@ console.log(import.meta.env)
 .jck {
   background-color: aquamarine;
 }
+
+div {
+  width: 100px;
+  height: 200px;
+  h1 {
+    font-size: large;
+    color: $base-color;
+  }
+}
+
 </style>
