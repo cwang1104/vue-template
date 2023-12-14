@@ -1,3 +1,3 @@
 export interface UserStat {
-    token: string | null
-} 
+  token: string | null
+}

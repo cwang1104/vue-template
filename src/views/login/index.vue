@@ -43,7 +43,7 @@ import useUserStore from '@/store/modules/user.ts'
 import { useRouter } from 'vue-router'
 import { ElNotification } from 'element-plus'
 
-import getTime  from '@/utils/time'
+import getTime from '@/utils/time'
 //控制变量加载
 let btnLoading = ref(false)
 
@@ -66,7 +66,7 @@ const login = async () => {
     ElNotification({
       type: 'success',
       message: '登录成功',
-      title:"hi，"+ timeMsg + '好'
+      title: 'hi，' + timeMsg + '好',
     })
     btnLoading.value = false
   } catch (error) {
