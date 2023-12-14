@@ -18,7 +18,11 @@ import allGlabal from '@/components'
 import '@/styles/index.scss'
 
 //注册模板路由
-import router from './router'
+import router from '@/router'
+
+//引入store
+import pinia from '@/store'
+
 
 const app = createApp(App)
 
@@ -27,6 +31,7 @@ app.use(ElementPlus, {
 })
 app.use(allGlabal)
 app.use(router)
+app.use(pinia)
 
 app.mount('#app')
 

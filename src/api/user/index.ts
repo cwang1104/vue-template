@@ -9,7 +9,7 @@ enum API {
 }
 
 export const reqLogin = (data: loginForm) =>
-  request.post<any, loginResponseData>(API.LOGIN_URL)
+  request.post<any, loginResponseData>(API.LOGIN_URL,data)
 
 export const reqUserInfo = (data: any) =>
-  request.get<any, any>(API.USERINFO_URL)
+  request.get<any, any>(API.USERINFO_URL,data)
