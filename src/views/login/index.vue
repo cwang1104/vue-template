@@ -10,10 +10,21 @@
             <el-input :prefix-icon="User" v-model="loginForm.username" />
           </el-form-item>
           <el-form-item>
-            <el-input type="password" :prefix-icon="Lock" v-model="loginForm.password" :show-password="true" />
+            <el-input
+              type="password"
+              :prefix-icon="Lock"
+              v-model="loginForm.password"
+              :show-password="true"
+            />
           </el-form-item>
           <el-form-item>
-            <el-button :loading="btnLoading" :disabled="btnLoading" class="login_btn" type="primary" @click="login">
+            <el-button
+              :loading="btnLoading"
+              :disabled="btnLoading"
+              class="login_btn"
+              type="primary"
+              @click="login"
+            >
               登录
             </el-button>
           </el-form-item>
@@ -29,43 +40,41 @@ import { ref, reactive } from 'vue'
 //引入store
 import useUserStore from '@/store/modules/user.ts'
 //引入router
-import { useRouter } from 'vue-router';
-import { ElNotification } from 'element-plus';
+import { useRouter } from 'vue-router'
+import { ElNotification } from 'element-plus'
 
 //控制变量加载
 let btnLoading = ref(false)
 
 let loginForm = reactive({ username: '', password: '' })
-let $router = useRouter();
+let $router = useRouter()
 
 const userStore = useUserStore()
 
 //登录按钮回调
 const login = async () => {
-  btnLoading.value=true
+  btnLoading.value = true
   //通知仓库发送请求
   //登录成功--》跳转页面
   //登录成功--》显示仓库信息
   try {
-    await userStore.userLogin(loginForm);
+    await userStore.userLogin(loginForm)
     //编程式导航跳转
-    $router.push("/");
+    $router.push('/')
     //登录成功提示
     ElNotification({
       type: 'success',
-      message: '登录成功'
+      message: '登录成功',
     })
-    btnLoading.value=false
+    btnLoading.value = false
   } catch (error) {
     ElNotification({
       type: 'error',
-      message: (error as Error).message
+      message: (error as Error).message,
     })
-    btnLoading.value=false
+    btnLoading.value = false
   }
-
 }
-
 </script>
 
 <style lang="scss">

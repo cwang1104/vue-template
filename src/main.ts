@@ -23,7 +23,6 @@ import router from '@/router'
 //引入store
 import pinia from '@/store'
 
-
 const app = createApp(App)
 
 app.use(ElementPlus, {
