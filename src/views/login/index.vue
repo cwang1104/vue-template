@@ -3,13 +3,13 @@
     <el-row>
       <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
-        <el-form class="login_form">
+        <el-form class="login_form" :model="loginForm" :rules="rules" ref="formCheck">
           <h1>标题1</h1>
           <h2>次级标题2</h2>
-          <el-form-item>
+          <el-form-item prop="username">
             <el-input :prefix-icon="User" v-model="loginForm.username" />
           </el-form-item>
-          <el-form-item>
+          <el-form-item prop="password">
             <el-input
               type="password"
               :prefix-icon="Lock"
@@ -20,7 +20,7 @@
           <el-form-item>
             <el-button
               :loading="btnLoading"
-              :disabled="btnLoading"
+              :disabled="btnSend"
               class="login_btn"
               type="primary"
               @click="login"
@@ -50,11 +50,19 @@ let btnLoading = ref(false)
 let loginForm = reactive({ username: '', password: '' })
 let $router = useRouter()
 
+let btnSend = ref(false)
+let formCheck=ref()
+
 const userStore = useUserStore()
 let timeMsg = getTime()
 //登录按钮回调
 const login = async () => {
+
+  await formCheck.value.validate()
+
+
   btnLoading.value = true
+  btnSend.value = true
   //通知仓库发送请求
   //登录成功--》跳转页面
   //登录成功--》显示仓库信息
@@ -69,13 +77,25 @@ const login = async () => {
       title: 'hi，' + timeMsg + '好',
     })
     btnLoading.value = false
+    btnSend.value = false
   } catch (error) {
     ElNotification({
       type: 'error',
       message: (error as Error).message,
     })
     btnLoading.value = false
+    btnSend.value = false
   }
+}
+
+const rules = {
+  username:[
+      {required: true,message:"用户名不能为空",trigger:"blur"},
+      {min:3,max:5,message:"长度为3-5位",trigger:"blur"}
+  ],
+  password:[
+    {required: true,message:"密码不能为空",trigger:"blur"},
+  ]
 }
 </script>
 
