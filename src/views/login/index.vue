@@ -3,7 +3,12 @@
     <el-row>
       <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
-        <el-form class="login_form" :model="loginForm" :rules="rules" ref="formCheck">
+        <el-form
+          class="login_form"
+          :model="loginForm"
+          :rules="rules"
+          ref="formCheck"
+        >
           <h1>标题1</h1>
           <h2>次级标题2</h2>
           <el-form-item prop="username">
@@ -51,15 +56,13 @@ let loginForm = reactive({ username: '', password: '' })
 let $router = useRouter()
 
 let btnSend = ref(false)
-let formCheck=ref()
+let formCheck = ref()
 
 const userStore = useUserStore()
 let timeMsg = getTime()
 //登录按钮回调
 const login = async () => {
-
   await formCheck.value.validate()
-
 
   btnLoading.value = true
   btnSend.value = true
@@ -89,13 +92,11 @@ const login = async () => {
 }
 
 const rules = {
-  username:[
-      {required: true,message:"用户名不能为空",trigger:"blur"},
-      {min:3,max:5,message:"长度为3-5位",trigger:"blur"}
+  username: [
+    { required: true, message: '用户名不能为空', trigger: 'blur' },
+    { min: 3, max: 5, message: '长度为3-5位', trigger: 'blur' },
   ],
-  password:[
-    {required: true,message:"密码不能为空",trigger:"blur"},
-  ]
+  password: [{ required: true, message: '密码不能为空', trigger: 'blur' }],
 }
 </script>
 
