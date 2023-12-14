@@ -13,7 +13,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
       vue(),
       viteMockServe({
         mockPath: 'mock',
-        enable: true,
+        // enable: true,
       }),
       createSvgIconsPlugin({
         // Specify the icon folder to be cached
