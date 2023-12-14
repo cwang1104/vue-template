@@ -10,5 +10,5 @@ interface dataType {
 export interface loginResponseData {
   code: number
   msg: string
-  data: dataType
+  data?: dataType
 }

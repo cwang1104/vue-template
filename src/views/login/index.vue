@@ -43,6 +43,7 @@ import useUserStore from '@/store/modules/user.ts'
 import { useRouter } from 'vue-router'
 import { ElNotification } from 'element-plus'
 
+import getTime  from '@/utils/time'
 //控制变量加载
 let btnLoading = ref(false)
 
@@ -50,7 +51,7 @@ let loginForm = reactive({ username: '', password: '' })
 let $router = useRouter()
 
 const userStore = useUserStore()
-
+let timeMsg = getTime()
 //登录按钮回调
 const login = async () => {
   btnLoading.value = true
@@ -65,6 +66,7 @@ const login = async () => {
     ElNotification({
       type: 'success',
       message: '登录成功',
+      title:"hi，"+ timeMsg + '好'
     })
     btnLoading.value = false
   } catch (error) {
